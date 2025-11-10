@@ -1,0 +1,239 @@
+    :root {
+      --brand-blue: #003366;
+      --accent-yellow: #FFD700;
+      --accent-red: #FF0000;
+      --neon-yellow: #fff65a;    /* soft neon yellow */
+      --neon-red: #ff2d55;       /* neon-ish red */
+      --white: #ffffff;
+      --muted: #6c757d;
+      --page-bg: #fafafa;
+      --card-bg: #ffffff;
+
+      /* neon glows */
+      --glow-yellow: 0 0 12px rgba(255, 246, 90, 0.45), 0 0 28px rgba(255, 246, 90, 0.18);
+      --glow-red: 0 0 10px rgba(255, 45, 85, 0.45), 0 0 22px rgba(255, 45, 85, 0.18);
+    }
+
+    /* Base */
+    html,body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--page-bg);
+      color: #111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      font-size: 16px;
+    }
+
+    /* NAVBAR (themed - unchanged core) */
+ .navbar {
+     background-color: var(--brand-blue);
+     padding: 1rem 0.8rem;
+ }
+
+ #logo {
+     height: 10%;
+     width: 10%;
+     border-radius: 50%;
+
+ }
+
+
+ .navbar-toggler {
+     border: none;
+ }
+
+ .navbar-nav .nav-link {
+     color: var(--white);
+     font-size: 0.95rem;
+ }
+
+ .navbar-nav .nav-link:hover {
+     color: var(--accent-yellow) !important;
+ }
+
+ .navbar-nav .nav-link.active {
+     color: var(--accent-red) !important;
+     font-weight: 700;
+ }
+
+    /* Main container */
+    main.container { padding-top: 1rem; padding-bottom: 1rem; max-width: 920px; }
+
+    /* Contact card */
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    .contact-title { color: var(--brand-blue); font-weight:700; margin-bottom:.5rem; font-size:1.15rem; }
+    .form-control { border-radius:8px; border:1px solid #e6e6e6; }
+    .form-control:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0,102,102,0.06);
+      border-color: rgba(0,102,102,0.5);
+    }
+
+    /* Buttons — use neon on hover only */
+    .btn-theme {
+      background: var(--brand-blue);
+      color: var(--white);
+      border: none;
+      padding: .45rem .8rem;
+      border-radius:8px;
+      font-weight:700;
+      transition: box-shadow .14s ease, transform .08s ease, color .12s ease;
+    }
+    .btn-theme:hover {
+      background: #002645;
+      color: var(--neon-yellow);
+      box-shadow: var(--glow-yellow);
+      transform: translateY(-1px);
+    }
+
+    /* Accent pill (neon-red small badge) */
+    .neon-badge {
+      display:inline-block;
+      padding:.18rem .45rem;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(255,45,85,0.12), rgba(255,45,85,0.06));
+      color: var(--accent-red);
+      font-weight:700;
+      font-size:.78rem;
+      box-shadow: 0 0 8px rgba(255,45,85,0.06);
+      border: 1px solid rgba(255,45,85,0.06);
+    }
+
+    /* Contact info block */
+    .contact-info {
+      background: linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
+      border-radius: 10px;
+      padding: .9rem;
+      margin-top: .8rem;
+    }
+    .contact-info h6 { margin-bottom:.3rem; font-weight:700; color:#111; }
+    .contact-info p { margin:0; color:var(--muted); font-size:.95rem; }
+
+    /* Footer (themed + social logos) */
+    footer {
+     background: var(--brand-blue);
+     color: var(--white);
+     padding: 3rem ;
+     margin-top: 1.25rem;
+     border-top: 4px solid rgba(255, 255, 255, 0.03);
+ }
+
+ footer .brand {
+     color: var(--accent-yellow);
+     font-weight: 800;
+ }
+
+ .social-links a {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     width: 44px;
+     height: 44px;
+     margin: 0 .25rem;
+     border-radius: 8px;
+     background: rgba(255, 255, 255, 0.06);
+     text-decoration: none;
+     transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+ }
+
+ /* subtle neon hover glows */
+ .social-links a:hover.tiktok {
+     box-shadow: var(--glow-red);
+     transform: translateY(-3px);
+     background: rgba(35, 32, 32, 0.895);
+ }
+
+ .social-links a:hover.youtube {
+     box-shadow: var(--glow-red);
+     transform: translateY(-3px);
+     background: rgba(173, 17, 46, 0.726);
+ }
+
+ .social-links a:hover.facebook {
+     box-shadow: var(--glow-yellow);
+     transform: translateY(-3px);
+     background: rgb(44, 91, 209);
+ }
+
+ .social-links svg {
+     width: 20px;
+     height: 20px;
+     fill: var(--white);
+     display: block;
+ }
+
+ /* small neon underline for contact email on hover */
+ .email-link {
+     color: inherit;
+     text-decoration: none;
+     position: relative;
+ }
+
+ .email-link:hover {
+     color: var(--neon-yellow);
+ }
+
+ .email-link::after {
+     content: '';
+     position: absolute;
+     left: 0;
+     right: 0;
+     bottom: -3px;
+     height: 2px;
+     background: transparent;
+     transition: background .12s ease, box-shadow .12s ease;
+     border-radius: 2px;
+ }
+
+ .email-link:hover::after {
+     background: var(--neon-yellow);
+     box-shadow: var(--glow-yellow);
+ }
+
+ /* Small screen tweaks */
+ @media (max-width: 575.98px) {
+     .social-links a {
+         width: 40px;
+         height: 40px;
+     }
+
+     .navbar-brand {
+         font-size: 1rem;
+     }
+
+     main.container {
+         padding-left: 12px;
+         padding-right: 12px;
+     }
+ }
+
+ /* Utility */
+ .muted {
+     color: var(--muted);
+ }
+
+ .small-note {
+     font-size: .85rem;
+     color: rgba(255, 255, 255, 0.9);
+ }
+
+
+ /* Responsive tweaks */
+ @media (min-width: 576px) {
+     .hero-title {
+         font-size: 1.25rem;
+     }
+
+     .news-thumb {
+         width: 120px;
+         height: 80px;
+     }
+ }

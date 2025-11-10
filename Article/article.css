@@ -1,0 +1,237 @@
+:root {
+    --brand-blue: #003366;
+    --accent-yellow: #FFD700;
+    --accent-red: #FF0000;
+    --neon-yellow: #fff65a;
+    --neon-red: #ff2d55;
+    --white: #ffffff;
+    --muted: #6c757d;
+    --page-bg: #fafafa;
+    --card-bg: #ffffff;
+
+    --glow-yellow: 0 0 12px rgba(255, 246, 90, 0.45), 0 0 28px rgba(255, 246, 90, 0.18);
+    --glow-red: 0 0 10px rgba(255, 45, 85, 0.45), 0 0 22px rgba(255, 45, 85, 0.18);
+}
+
+body {
+    background: var(--page-bg);
+     margin: 0;
+     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+     font-size: 16px;
+}
+
+/* NAVBAR */
+ .navbar {
+     background-color: var(--brand-blue);
+     padding: 3rem 0.8rem;
+ }
+
+ #logo {
+     height: 10%;
+     width: 10%;
+     border-radius: 50%;
+
+ }
+
+
+ .navbar-toggler {
+     border: none;
+ }
+
+ .navbar-nav .nav-link {
+     color: var(--white);
+     font-size: 0.95rem;
+ }
+
+ .navbar-nav .nav-link:hover {
+     color: var(--accent-yellow) !important;
+ }
+
+ .navbar-nav .nav-link.active {
+     color: var(--accent-red) !important;
+     font-weight: 700;
+ }
+
+ main{
+    display: none;
+ }
+ 
+
+
+/* ARTICLE SECTION */
+main.container {
+    max-width: 800px;
+    padding: 1rem;
+}
+
+.article-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: var(--brand-blue);
+}
+
+.article-meta {
+    font-size: .9rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.article-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.article-body p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.article-body h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.2rem;
+    margin-bottom: .6rem;
+    color: var(--brand-blue);
+}
+
+.figure {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.figure img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.figure-caption {
+    font-size: .85rem;
+    color: var(--muted);
+    margin-top: .4rem;
+}
+
+
+/* FOOTER */
+footer {
+     background: var(--brand-blue);
+     color: var(--white);
+     padding: 3rem ;
+     margin-top: 1.25rem;
+     border-top: 4px solid rgba(255, 255, 255, 0.03);
+ }
+
+ footer .brand {
+     color: var(--accent-yellow);
+     font-weight: 800;
+ }
+
+ .social-links a {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     width: 44px;
+     height: 44px;
+     margin: 0 .25rem;
+     border-radius: 8px;
+     background: rgba(255, 255, 255, 0.06);
+     text-decoration: none;
+     transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+ }
+
+ /* subtle neon hover glows */
+ .social-links a:hover.tiktok {
+     box-shadow: var(--glow-red);
+     transform: translateY(-3px);
+     background: rgba(35, 32, 32, 0.895);
+ }
+
+ .social-links a:hover.youtube {
+     box-shadow: var(--glow-red);
+     transform: translateY(-3px);
+     background: rgba(173, 17, 46, 0.726);
+ }
+
+ .social-links a:hover.facebook {
+     box-shadow: var(--glow-yellow);
+     transform: translateY(-3px);
+     background: rgb(44, 91, 209);
+ }
+
+ .social-links svg {
+     width: 20px;
+     height: 20px;
+     fill: var(--white);
+     display: block;
+ }
+
+ /* small neon underline for contact email on hover */
+ .email-link {
+     color: inherit;
+     text-decoration: none;
+     position: relative;
+ }
+
+ .email-link:hover {
+     color: var(--neon-yellow);
+ }
+
+ .email-link::after {
+     content: '';
+     position: absolute;
+     left: 0;
+     right: 0;
+     bottom: -3px;
+     height: 2px;
+     background: transparent;
+     transition: background .12s ease, box-shadow .12s ease;
+     border-radius: 2px;
+ }
+
+ .email-link:hover::after {
+     background: var(--neon-yellow);
+     box-shadow: var(--glow-yellow);
+ }
+
+ /* Small screen tweaks */
+ @media (max-width: 575.98px) {
+     .social-links a {
+         width: 40px;
+         height: 40px;
+     }
+
+     .navbar-brand {
+         font-size: 1rem;
+     }
+
+     main.container {
+         padding-left: 12px;
+         padding-right: 12px;
+     }
+ }
+
+ /* Utility */
+ .muted {
+     color: var(--muted);
+ }
+
+ .small-note {
+     font-size: .85rem;
+     color: rgba(255, 255, 255, 0.9);
+ }
+
+
+ /* Responsive tweaks */
+ @media (min-width: 576px) {
+     .hero-title {
+         font-size: 1.25rem;
+     }
+
+     .news-thumb {
+         width: 120px;
+         height: 80px;
+     }
+ }
